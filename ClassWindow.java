@@ -5,7 +5,7 @@ import java.util.Random;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.awt.Font;
 public class ClassWindow {
     protected JFrame window;
     private JButton Button_Random;
@@ -22,10 +22,12 @@ public class ClassWindow {
     private void CreateFrames(String ClassName){
         JPanel p = new JPanel();
         p.setSize(300,300);
+        p.setLayout(new BoxLayout());
         JLabel j = new JLabel();
         j.setSize(100,100);
+        j.setFont(new Font("Serif",Font.BOLD,30));
         this.window = new JFrame("Who is it going to be?");
-        this.window.setSize(200,200);
+        this.window.setSize(300,150);
         
         this.Button_Random = new JButton("Random");
         
