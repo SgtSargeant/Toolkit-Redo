@@ -1,8 +1,8 @@
 import javax.swing.*;
 import java.util.Timer;
 import java.util.concurrent.TimeUnit;
-
-public class TimerWindow extends JFrame {
+import java.awt.Font;
+public class TimerWindow extends JFrame{
     private Timer t = new Timer();
     private JPanel panel = new JPanel();
     private JLabel j;
