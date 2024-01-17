@@ -8,7 +8,7 @@ public class TimerClass extends Thread {
     private JFrame window;
     private JPanel panel;
     private JLabel label;
-    private Dimension d = new Dimension(400,400);
+    private Dimension d = new Dimension(400,200);
     private int time;
 
     public TimerClass(int time){
@@ -18,6 +18,7 @@ public class TimerClass extends Thread {
         this.panel = new JPanel();
         this.panel.setSize(this.d);
         this.label = new JLabel(Integer.toString(time));
+        this.panel.add(new JLabel("Time Remaining"));
         this.panel.add(label);
         this.window.add(this.panel);
         
@@ -25,7 +26,8 @@ public class TimerClass extends Thread {
 
     public void run(){
         this.window.setVisible(true);
-        this.label.setFont(new Font("Serif",Font.BOLD,30));
+        this.label.setFont(new Font("Serif",Font.BOLD,56));
+        this.window.setAlwaysOnTop(true);
         for(int i = this.time; i > -1; i--){
             String m = Integer.toString(i/60);
             String s = Integer.toString(i%60);
@@ -39,6 +41,7 @@ public class TimerClass extends Thread {
             }catch(Exception e){
                 System.out.println("Fail");
             }
+            
             
         }
     }

@@ -3,7 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 public class ClassButton extends JButton{
-    private Dimension d = new Dimension (200,100);
+    private Dimension d = new Dimension (1000,600);
     
     public ClassButton(){
         this.setSize(this.d);

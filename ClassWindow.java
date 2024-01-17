@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.Dimension;
 public class ClassWindow {
     protected JFrame window;
     private JButton Button_Random;
@@ -14,7 +15,7 @@ public class ClassWindow {
     private Scanner reader; 
     private String[] names;
     private Random ran = new Random();
-    
+    private Dimension d = new Dimension(500,300);
     public ClassWindow(String ClassName){
         this.names = NamesList(ClassName);
         CreateFrames(ClassName);
@@ -27,7 +28,9 @@ public class ClassWindow {
         JLabel j = new JLabel();
         j.setSize(100,100);
         j.setFont(new Font("Serif",Font.BOLD,30));
+        j.setHorizontalAlignment(SwingConstants.CENTER);
         this.window = new JFrame("Who is it going to be?");
+        this.window.setAlwaysOnTop(true);
         this.window.setSize(500,100);
         
         this.Button_Random = new JButton("Random");
@@ -47,6 +50,7 @@ public class ClassWindow {
         this.window.getContentPane().setLayout(new BorderLayout());
         this.window.getContentPane().add(p);
         this.window.setVisible(true);
+        this.window.toFront();
     }
 
     private String[] NamesList(String ClassName){
